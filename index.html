@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern TTS Audio Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-card">
+        <h1>Voice Generator</h1>
+        
+        <!-- Language Selection -->
+        <div class="control-group">
+            <label>Select Language</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="language" value="en" checked>
+                    <span>English</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="language" value="ur">
+                    <span>Urdu (اردو)</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Text Input -->
+        <div class="control-group">
+            <textarea id="text-input" placeholder="Type your text here..."></textarea>
+        </div>
+
+        <!-- Voice Selection -->
+        <div class="control-group">
+            <label for="voice-select">Available Voices</label>
+            <select id="voice-select">
+                <option value="">Loading voices...</option>
+            </select>
+        </div>
+
+        <!-- Range Sliders -->
+        <div class="sliders-grid">
+            <div class="slider-control">
+                <div class="slider-header">
+                    <label for="pitch">Pitch</label>
+                    <span id="pitch-val">1.0</span>
+                </div>
+                <input type="range" id="pitch" min="0" max="2" step="0.1" value="1">
+            </div>
+
+            <div class="slider-control">
+                <div class="slider-header">
+                    <label for="rate">Speed (Rate)</label>
+                    <span id="rate-val">1.0</span>
+                </div>
+                <input type="range" id="rate" min="0.1" max="2" step="0.1" value="1">
+            </div>
+
+            <div class="slider-control">
+                <div class="slider-header">
+                    <label for="volume">Volume</label>
+                    <span id="volume-val">1.0</span>
+                </div>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="generate-section">
+            <button id="btn-generate" class="btn primary">✨ Generate Audio</button>
+            <p id="status-text" class="status-text"></p>
+        </div>
+
+        <!-- Output Voice Message Card (Initially Hidden) -->
+        <div id="audio-player-card" class="player-card hidden">
+            <h3>🎵 Generated Voice Message</h3>
+            <audio id="audio-element" controls></audio>
+            <button id="btn-download" class="btn success">⬇ Download MP3</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

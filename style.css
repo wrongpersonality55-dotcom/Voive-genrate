@@ -1,0 +1,210 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-glow: rgba(99, 102, 241, 0.15);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --success: #10b981;
+    --success-hover: #059669;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-main);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 30px var(--glass-glow);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(to right, #fff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.control-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: var(--primary);
+    width: 18px;
+    height: 18px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px;
+    color: var(--text-main);
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: var(--primary);
+}
+
+select {
+    width: 100%;
+    background: #111424;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 12px;
+    color: var(--text-main);
+    outline: none;
+    cursor: pointer;
+}
+
+.sliders-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 480px) {
+    .sliders-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.slider-control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+.slider-header span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--primary);
+}
+
+.generate-section {
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.btn.primary { background: var(--primary); color: white; }
+.btn.primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+.btn.success { background: var(--success); color: white; margin-top: 15px; }
+.btn.success:hover { background: var(--success-hover); transform: translateY(-1px); }
+
+.status-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 10px;
+    min-height: 18px;
+}
+
+/* Audio Player Card Styling */
+.player-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.player-card h3 {
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+audio {
+    width: 100%;
+    accent-color: var(--primary);
+}
+
+/* Modern Dark Theme Audio Controls Fallback for Chrome/Safari */
+audio::-webkit-media-controls-panel {
+    background-color: #1e1b4b;
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
